@@ -15,7 +15,7 @@ pipeline  {
             steps {
                 echo 'Creating docker image ...'
                 dir('.'){
-                    sh "docker build -t hennessyzazz/secret-contact-list ContactList/. "
+                    sh "docker build -t allnullable/secret-contact-list ContactList/. "
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline  {
             steps {
                 echo " ============== pushing image =================="
                 sh '''
-                docker push hennessyzazz/secret-contact-list:latest
+                docker push allnullable/secret-contact-list:latest
                 '''
             }
         }
