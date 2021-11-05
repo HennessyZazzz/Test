@@ -15,7 +15,7 @@ pipeline  {
             steps {
                 echo 'Creating docker image ...'
                 dir('.'){
-                    sh "docker build -t allnullable/secret-contact-list ContactList/. "
+                    sh "docker build -t hennessyzazz/secret-contact-list ContactList/. "
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline  {
             steps {
                 echo " ============== pushing image =================="
                 sh '''
-                docker push allnullable/secret-contact-list:latest
+                docker push hennessyzazz/secret-contact-list:latest
                 '''
             }
         }
@@ -57,7 +57,7 @@ pipeline  {
             steps {
                 echo " ============== starting chatterbox server =================="
                 sh '''
-                docker run -d --restart=always -p 80:80  macnaer/secret-contact-list
+                docker run -d --restart=always -p 80:80  hennessyzazz/secret-contact-list
                 '''
             }
         }
